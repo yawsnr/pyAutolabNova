@@ -1,0 +1,2 @@
+class GeneralFunctions:
+    pass

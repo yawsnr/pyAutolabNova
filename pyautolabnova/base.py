@@ -8,11 +8,18 @@ class PyAutolabNova:
         self.instrument = None
         self.is_connected = False
         
-        # Get the directory of the current file (base.py)
-        current_dir = Path(__file__).parent.absolute()
-        self.resources_path = current_dir / "resource_files"
+        # Try to find the resource_files directory
+        possible_paths = [
+            Path(__file__).parent / "resource_files",
+            Path(sys.prefix) / "Lib" / "site-packages" / "pyautolabnova" / "resource_files",
+            Path.home() / ".pyautolabnova" / "resource_files"
+        ]
         
-        # Add the resources path to sys.path and the DLL search path
+        self.resources_path = next((p for p in possible_paths if p.exists()), None)
+        
+        if self.resources_path is None:
+            raise FileNotFoundError("Could not find resource_files directory")
+        
         sys.path.append(str(self.resources_path))
         os.environ['PATH'] = f"{str(self.resources_path)};{os.environ['PATH']}"
         
@@ -30,14 +37,9 @@ class PyAutolabNova:
                                     f"ADK: {self.adk_path}\n"
                                     f"Hardware Setup: {self.hardware_setup_path}")
         
-        try:
-            clr.AddReference(str(self.sdk_dll))
-            from EcoChemie.Autolab.Sdk import Instrument
-            self.instrument = Instrument()
-            print(f"Instrument type: {type(self.instrument)}")
-        except Exception as e:
-            print(f"Error initializing instrument: {e}")
-            raise RuntimeError(f"Failed to load the SDK and create Instrument: {e}")
+        clr.AddReference(str(self.sdk_dll))
+        from EcoChemie.Autolab.Sdk import Instrument
+        self.instrument = Instrument()
 
     def connect(self):
         if self.instrument is None:

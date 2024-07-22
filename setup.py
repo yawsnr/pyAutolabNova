@@ -13,6 +13,10 @@ setup(
     long_description_content_type="text/markdown",
     url="https://github.com/yawsnr/pyautolabnova",
     packages=find_packages(exclude=['diagnosis', 'diagnosis.*']),
+    include_package_data=True,
+    package_data={
+        "pyautolabnova": ["resource_files/**/*"],
+        },
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
         "Intended Audience :: Science/Research",

@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Dynamic method to find SDK files
 
 ### Changed
-- Refactored code for improved simplicity and readability
+- Prettier exception message if NOVA software is opened
 
 ### Fixed
 - Unable to disconnect from device

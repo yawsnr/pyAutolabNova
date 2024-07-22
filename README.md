@@ -20,6 +20,8 @@ pip install pyautolabnova
 - Metrohm Autolab SDK 2.1 installed
 
 ## Usage
+Please ensure the Autolab software is close before using this script otherwise you will run into an Access Denied but from the Autolab software maintaining an exclusive lock on the USB device, preventing the Python script from accessing it through the SDK.
+
 
 Here's a basic example of how to use PyAutolabNova:
 

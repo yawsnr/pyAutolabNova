@@ -1,6 +1,5 @@
-from pyautolabnova.base import Base
+from pyautolabnova.base import pyautolabnova as pal
 
-base = Base()
-base.connect()
-# You can add any operations you want to perform here
-base.disconnect()
+pal.connect()
+# Perform operations
+pal.disconnect()

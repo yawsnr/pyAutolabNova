@@ -5,14 +5,14 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="pyautolabnova",
-    version="0.0.1a1",
+    version="0.0.1a2",
     author="Dr. Yaw Ofosu Ansong Snr",
     author_email="yaw.srr@gmail.com",
     description="A python package for interfacing with Metrohm Autolab instruments",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/yawsnr/pyautolabnova",
-    packages=find_packages(),
+    packages=find_packages(exclude=['diagnosis', 'diagnosis.*']),
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
         "Intended Audience :: Science/Research",

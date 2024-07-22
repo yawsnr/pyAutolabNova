@@ -46,9 +46,19 @@ class PyAutolabNova:
             self._initialize_instrument()
         self.instrument.AutolabConnection.EmbeddedExeFileToStart = str(self.adk_path)
         self.instrument.set_HardwareSetupFile(str(self.hardware_setup_path))
-        self.instrument.Connect()
-        self.is_connected = True
-        print("Connected to AUTOLAB successfully.")
+        try:
+            self.instrument.Connect()
+            self.is_connected = True
+            print("Connected to AUTOLAB successfully.")
+        except Exception as e:
+            if "Access is denied" in str(e):
+                print("Error: Unable to connect to AUTOLAB.")
+                print("Please ensure that Nova software is closed and no other application is using the instrument.")
+                print("If the problem persists, try disconnecting and reconnecting the USB cable, or restarting your computer.")
+            else:
+                print(f"An unexpected error occurred while connecting to AUTOLAB: {str(e)}")
+            self.is_connected = False
+            
 
     def disconnect(self):
         if self.instrument is not None and self.is_connected:

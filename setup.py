@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="pyautolabnova",
-    version="0.1.0",
+    version="0.1.0a1",
     author="Dr. Yaw Ofosu Ansong Snr",
     author_email="yaw.srr@gmail.com",
     description="A python package for interfacing with Metrohm Autolab instruments",

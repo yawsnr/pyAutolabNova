@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="pyautolabnova",
-    version="0.0.1a4",
+    version="0.1.0",
     author="Dr. Yaw Ofosu Ansong Snr",
     author_email="yaw.srr@gmail.com",
     description="A python package for interfacing with Metrohm Autolab instruments",
@@ -18,7 +18,7 @@ setup(
         "pyautolabnova": ["resource_files/**/*"],
         },
     classifiers=[
-        "Development Status :: 2 - Pre-Alpha",
+        "Development Status :: 3 - Alpha",
         "Intended Audience :: Science/Research",
         "License :: OSI Approved :: MIT License",
         "Operating System :: Microsoft :: Windows",

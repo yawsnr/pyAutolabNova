@@ -1,1 +1,1 @@
-Lists dependencies of the library.
+To list dependencies of the library.

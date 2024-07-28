@@ -1,6 +1,6 @@
 # PyAutolabNova
 
-This is the pre-Alpha release of PyAutolabNova. If you're seeing this package, you came here too early. This pre-Alpha release is to reserve the package name. Please check back in about a months time when this package will be able to perform basic functionalities like running basic electrochmeistry experiment. 
+PyAutolabNova has progressed to its Alpha stage, marking a significant advancement from the pre-Alpha version. In this release, I've implemented basic functionalities for connecting to and controlling Autolab devices. Users can now set the mode, current range, and bandwidth, as well as toggle the cell on and off. I've also enhanced the error handling and connection process. While I've temporarily removed some non-functioning methods like apply_current and record_signals, the current version allows for basic electrochemistry experiments. As an Alpha release, the software may have limitations, but it's now ready for early adopters to explore. I welcome any feedback as I continue to develop and expand PyAutolabNova's capabilities. For the latest updates and enhancements, please refer to the documentation or repository.
 
 ## Current version
 See changelog for detailed changes for each release
